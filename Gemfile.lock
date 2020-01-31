@@ -1,0 +1,83 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.1.3)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    coderay (1.1.1)
+    concurrent-ruby (1.0.5)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
+    eventmachine (1.2.7)
+    faraday (0.15.3)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
+    faye-websocket (0.10.7)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
+    gli (2.18.0)
+    hashie (3.6.0)
+    highline (1.7.8)
+    i18n (0.8.6)
+    mechanize (2.1.1)
+      domain_name (~> 0.5, >= 0.5.1)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.4, >= 2.4.1)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (~> 0.0, >= 0.0.9)
+    method_source (0.8.2)
+    mini_portile2 (2.2.0)
+    minitest (5.10.3)
+    multipart-post (2.0.0)
+    net-http-digest_auth (1.4.1)
+    net-http-persistent (2.9.4)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
+    ntlm-http (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    settingslogic (2.0.9)
+    slack-notifier (2.3.2)
+    slack-ruby-client (0.13.1)
+      activesupport
+      faraday (>= 0.9)
+      faraday_middleware
+      gli
+      hashie
+      websocket-driver
+    slop (3.6.0)
+    thor (0.20.0)
+    thread_safe (0.3.6)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
+    webrobots (0.1.2)
+    websocket-driver (0.7.0)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport (~> 5.1.0)
+  eventmachine
+  faye-websocket
+  highline
+  mechanize (~> 2.1.0)
+  pry
+  settingslogic
+  slack-notifier
+  slack-ruby-client
+  thor
+
+BUNDLED WITH
+   1.17.3

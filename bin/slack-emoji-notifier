@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../../config/application', __FILE__)
+
+class CliEmojiNotifier < Thor
+  desc 'update', 'データを更新します。'
+  option :notify, type: :boolean, default: false
+  def update
+    client = Slack::Web::Client.new
+
+    prev_emoji_keys = EmojiManager.load
+    emoji_keys = client.emoji_list.emoji.keys
+    
+    new_emoji_keys = (emoji_keys - prev_emoji_keys)
+    removed_emoji_keys = (prev_emoji_keys - emoji_keys)
+
+    if options[:notify] && (new_emoji_keys.present? || removed_emoji_keys.present?)
+      body = ''
+      if new_emoji_keys.present?
+        body << "*New* " + new_emoji_keys.map { |k| ":#{k}:"}.join(' ') + "\n"
+      end
+
+      if removed_emoji_keys.present?
+        body << "*Del* " + removed_emoji_keys.map { |k| ":#{k}:"}.join(' ') + "\n"
+      end
+
+      notifier = Slack::Notifier.new(Settings.slack_notification_webhook_url)
+      notifier.post({
+        channel: Settings.slack_notification_channel,
+        username: Settings.slack_notification_username,
+        icon_emoji: Settings.slack_notification_icon_emoji,
+        text: body
+      })      
+    end
+
+    EmojiManager.save(emoji_keys)
+  end
+end
+
+CliEmojiNotifier.start(ARGV)

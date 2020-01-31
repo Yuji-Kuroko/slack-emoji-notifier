@@ -1,0 +1,5 @@
+slack_api_token: <%= ENV.fetch('SLACK_API_TOKEN') %>
+slack_notification_channel: "<%= ENV.fetch('SLACK_EMOJI_NOTIFICATION_CHANNEL', '#emoji') %>"
+slack_notification_icon_emoji: "<%= ENV.fetch('SLACK_EMOJI_NOTIFICATION_ICON_EMOJI', ':robot_face:') %>"
+slack_notification_username: "<%= ENV.fetch('SLACK_EMOJI_NOTIFICATION_USERNAME', 'emoji-notifier') %>"
+slack_notification_webhook_url: "<%= ENV.fetch('SLACK_EMOJI_NOTIFICATION_WEBHOOK_URL') %>"
