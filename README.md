@@ -21,3 +21,12 @@ bin/slack-emoji-notifier update --notify
 ```
 
 notifyをつけるとslack通知します。つけなければ、内部のデータ更新のみします。
+
+### docker
+
+```
+docker build -t emoji:1
+docker run -v $(pwd):/app -w /app bash -c "unset BUNDLE_APP_CONFIG; bundle install"
+./notify.sh
+```
+

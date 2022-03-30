@@ -12,6 +12,8 @@ require 'active_support/core_ext'
 require 'highline/import'
 require 'thor'
 
+ Dotenv.load
+
 # initializer
 Dir.glob("#{App.root}/config/initializer/*.rb").each do |require_path|
   require require_path
