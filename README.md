@@ -26,7 +26,7 @@ notifyをつけるとslack通知します。つけなければ、内部のデー
 
 ```
 docker build -t emoji:1
-docker run -v $(pwd):/app -w /app bash -c "unset BUNDLE_APP_CONFIG; bundle install"
+docker run -v $(pwd):/app -w /app emoji:1 bash -c "unset BUNDLE_APP_CONFIG; bundle install"
 ./notify.sh
 ```
 
