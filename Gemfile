@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem 'dotenv'
-gem 'activesupport', '~> 5.1.0'
+gem 'activesupport', '~> 6.0.6'
 #gem 'mechanize', '~> 2.1.0'
 gem 'settingslogic'
 gem 'highline'
